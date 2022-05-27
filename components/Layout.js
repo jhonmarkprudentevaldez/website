@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material/styles';
+//try
 import {
   AppBar,
   Grid,
@@ -238,7 +239,6 @@ export default function Layout({ title, description, children }) {
             </Box>
 
             <Box>
-             
               <NextLink href="/cart" passHref>
                 <Link>
                   <Typography component="span">
