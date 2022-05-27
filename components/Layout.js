@@ -128,14 +128,6 @@ export default function Layout({ title, description, children }) {
     e.preventDefault();
     router.push(`/search?query=${query}`);
   };
-  const styles = {
-    paperContainer: {
-      height: 400,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundImage: `url(${'/public/images/b10.jpg'})`,
-    },
-  };
   return (
     <>
       <Head>
