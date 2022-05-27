@@ -1,4 +1,12 @@
-import { Alert, CircularProgress, Grid } from '@mui/material';
+import {
+  Alert,
+  CircularProgress,
+  Grid,
+  Container,
+  Box,
+  Button,
+  Typography,
+} from '@mui/material';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useSnackbar } from 'notistack';
@@ -60,9 +68,40 @@ export default function Home() {
     });
     router.push('/cart');
   };
-
   return (
     <Layout>
+      <Box
+        component="header"
+        bgcolor="text.disabled"
+        color="dark"
+        marginTop={2}
+      >
+        <Container>
+          <Grid container spacing={2}>
+            <Grid item xs={5} sm={3}>
+              <Box marginTop={10} fontSize={35}>
+                ASTIG 03
+              </Box>
+            </Grid>
+            <Grid item xs={5} sm={3} marginTop={10}></Grid>
+            <Grid item xs={5} sm={6}>
+              <Box borderBottom={1} fontSize={30}>
+                YOUR SHOPPING VENTURES STARTS HERE
+              </Box>
+              <Box>
+                <Typography color="inherit" marginTop={5}>
+                  Check out more products that suit your style
+                </Typography>
+                <Box marginTop={4}></Box>
+                <Button variant="contained" marginTop={10} href="/search">
+                  VIEW PRODUCTS
+                </Button>
+              </Box>
+              <Box marginTop={10}></Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
       {loading ? (
         <CircularProgress />
       ) : error ? (

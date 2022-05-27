@@ -1,14 +1,13 @@
 import { Container, Typography, Box, Grid, Link } from '@mui/material';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useSnackbar } from 'notistack';
 import { useContext, useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import client from '../utils/client';
-import { urlForThumbnail } from '../utils/image';
 import { Store } from '../utils/Store';
 import PhoneIcon from '@mui/icons-material/Phone';
-export default function Home() {
+
+export default function HOME() {
   const {
     state: { cart },
     dispatch,
@@ -21,7 +20,6 @@ export default function Home() {
     error: '',
     loading: true,
   });
-  //const { loading, error, products } = state;
 
   useEffect(() => {
     const fetchData = async () => {

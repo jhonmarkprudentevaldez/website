@@ -27,7 +27,7 @@ const prices = [
     name: 'Php 101 to Php 500',
     value: '100 - 5000',
   },
-  
+
   {
     name: 'Php 500 to Php 1000',
     value: '5000 - 1000',
@@ -80,7 +80,7 @@ export default function SearchScreen() {
           gQuery += ` && price >= ${minPrice} && price <= ${maxPrice}`;
         }
         if (rating !== 'all') {
-          gQuery += ` && rating >= ${Number(rating)} `;
+          gQuery += ` && rating == ${Number(rating)} `;
         }
         let order = '';
         if (sort !== 'default') {
@@ -200,7 +200,6 @@ export default function SearchScreen() {
                   {ratings.map((rating) => (
                     <MenuItem dispaly="flex" key={rating} value={rating}>
                       <Rating value={rating} readOnly />
-                      <Typography component="span">&amp; Up</Typography>
                     </MenuItem>
                   ))}
                 </Select>
